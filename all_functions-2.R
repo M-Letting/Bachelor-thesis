@@ -224,8 +224,8 @@ make_cor_plot <- function(df, n, min_cov = 1, max_cov = nrow(df), string){
     ggtitle(string)
 }
 
-#Makes a Venn diagram to compare the peptide discovery across machines
-machine_comparrison <- function(df){
+#Makes a Venn diagram to compare the peptide discovery across instruments
+instrument_comparrison <- function(df){
   exp_df <- df[, grep("EXP", names(df), value = TRUE)]
   exp_df <- exp_df[rowSums(is.na(exp_df)) != ncol(exp_df), ]
   exp_peptides <- rownames(exp_df)
