@@ -37,7 +37,7 @@ median_normalize_dataframe <- function(df){
 }
 
 #Creates a the a dataframe for making summed intensities plot
-sum_normalized <- function(df){
+sum_quantified <- function(df){
   require(dplyr)
   sample_coverage_n <- apply(df, 1,function(x) sum(!is.na(x)))
   sample_coverage_df <- as.data.frame(sample_coverage_n)
@@ -67,7 +67,7 @@ make_median_summed_list <- function(df, n){
 }
 
 #Creates a dataframe for making median normalized plot
-median_normalized <- function(df){
+median_quantified <- function(df){
   sample_coverage_n <- apply(df, 1,function(x) sum(!is.na(x)))
   median_df <- as.data.frame(sample_coverage_n)
   median_intensity <- apply(df, 
